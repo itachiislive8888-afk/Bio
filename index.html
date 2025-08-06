@@ -12,12 +12,13 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(-45deg, #0f0f0f, #1c1c1c, #3b0a0a, #0f0f0f);
+      background: linear-gradient(120deg, #000000, #3b0a0a, #0f0f0f, #1c1c1c);
       background-size: 400% 400%;
       animation: backgroundShift 15s ease infinite;
       color: white;
       text-align: center;
       padding: 50px 20px;
+      overflow-x: hidden;
     }
     @keyframes backgroundShift {
       0% { background-position: 0% 50%; }
@@ -25,15 +26,59 @@
       100% { background-position: 0% 50%; }
     }
     h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       margin-bottom: 20px;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 3px solid red;
+      border-right: 4px solid red;
       width: 0;
-      animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+      animation: typing 4s steps(22, end) forwards, blink 0.75s step-end infinite;
+      background: linear-gradient(90deg, #ff0000, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     @keyframes typing {
+      from { width: 0; }
+      to { width: 22ch; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .tagline {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #ff4e4e;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+    }
+    .btn {
+      background: red;
+      padding: 14px 30px;
+      color: white;
+      border: none;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(255,0,0,0.6);
+    }
+    .btn:hover {
+      transform: scale(1.1);
+      background: darkred;
+      box-shadow: 0 0 25px rgba(255,0,0,0.9);
+    }
+  </style>
+</head>
+<body>
+  <h1>Itachi is Live</h1>
+  <div class="tagline">New YouTuber — Support Me 🔥</div>
+  <a class="btn" href="https://youtube.com/@YOURCHANNEL" target="_blank">Subscribe Now</a>
+</body>
+</html>
       from { width: 0; }
       to { width: 18ch; }
     }
